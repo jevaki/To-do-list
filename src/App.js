@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import ListAdder from './components/ListAdder';
+import ShowList from './components/ShowList';
+import { useState } from 'react';
+import Countdown from './components/Countdown';
 
 function App() {
+  const [toDoTask, setToDoTask] = useState([
+    {task: "Complete test suite"},
+    {task: "Make the To-Do-List app"}
+  ]);
+
+  const removeTask = index => {
+    const newToDoTask = [...toDoTask];
+    newToDoTask.splice(index, 1);
+    setToDoTask(newToDoTask);
+  }
+  const hoursMinSecs = {hours:2, minutes: 0, seconds: 0};
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <ListAdder setToDoTask={setToDoTask}/>
+      <ShowList toDoTask={toDoTask} removeTask={removeTask}/>
+      <Countdown hoursMinSecs={hoursMinSecs}/>
     </div>
   );
 }

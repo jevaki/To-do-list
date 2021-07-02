@@ -1,38 +1,52 @@
 .App {
+  background-color: #4d244e;
   text-align: center;
+  height: 100vh;
+  padding: 30px;
+  color: #aa8e8d;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.li {
+  height: 100px;
+  color: rgb(219, 75, 104);
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: large;
+  color: rgb(219, 75, 104);
 }
 
-.App-link {
-  color: #61dafb;
+.NewTask {
+  text-align: right;
+  padding: 50px;
+  height: 50px;
+  
+}
+.Add-button {
+  background-color:violet;
+  text-decoration: solid;
+  border-radius: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close {
+  position: absolute;
+  right: 0;
+  background-color: rgb(219, 75, 104);
+}
+input[type=checkbox] {
+  position: absolute;
+  right: 0;
+  height: 17px;
+  width: 100px;
+  background-color: #eee;
+  filter: sepia();
+}
+.timer {
+  text-align: left;
+  font-size: 25px;
+  color: darksalmon;
 }
